@@ -1,0 +1,349 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>It's All About The Game</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}" >
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-		awesome.min.css">
+
+	</head>
+	<body>
+	
+
+
+<script type="text/javascript">
+	function login(){
+		var data = document.forms["login"];
+		var email = data["email"].value;
+		var password = data["password"].value;
+		console.log(email);
+		console.log(password);
+		if(email=="" || password==""){
+			alert("Enter all the credentials");
+			return false;
+		}
+	}
+
+	function signup(){
+		var data = document.forms["signup"];
+		var name = data["name"].value;
+		var email = data["email"].value;
+		var password = data["password"].value;
+		var cpassword = data["cpassword"].value;
+		var age= data["age"].value;
+		var interest = data["interest"].value;
+		if(name=="" || email=="" || password=="" || cpassword=="" || age=="" || interest=""){
+			alert("All fields are compulsory");
+			return false;
+		}
+		
+	}
+</script>
+
+
+
+
+<div id="id01" class="modal">
+<form class="modal-content animate" action="/login"  method="post">{% csrf_token %}
+	<div class="form">
+       <div class="imgcontainer">
+      		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt=" " class="avatar">
+    	</div>	
+      <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form class="modal-content animate" action="/login"  method="post">{% csrf_token %}
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" name="email" required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" name="password" required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+			<p>
+			<input class="full-width" type="submit" value="Login">
+          </p>
+          
+		</form>
+
+        </div>
+        
+      <!-- tab-content -->
+     
+</div> <!-- /form -->
+</form> 
+</div>
+
+
+<div id="id02" class="modal">
+<form class="modal-content animate" action="/signup"  method="post">{% csrf_token %}
+	<div class="form">
+       
+      	<div class="imgcontainer">
+      		<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt=" " class="avatar">
+    	</div>	
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+		
+          <form class="modal-content animate" action="/signup" method="post">{% csrf_token %}
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+			<input name="name" id="firstname" type="text" required autocomplete="off" >
+            </div>
+
+			<div class="field-wrap">
+              <label>
+                Age of Player<span class="req">*</span>
+              </label>
+              <input name="age" id="age" type="text" required autocomplete="off" >
+            </div>
+          </div>        
+
+            <div class="field-wrap">
+              <label>
+                Interested Sports<span class="req">*</span>
+              </label>
+              <input name="interest" id="sportsinterest" type="text" required autocomplete="off" >
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input id="signin-email" type="email" required autocomplete="off" " name="email">
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input id="signin-password" type="password" required autocomplete="off"   name="password">
+          </div>
+			<div class="field-wrap">
+            <label>
+              Confirm Password<span class="req">*</span>
+            </label>
+            <input  name="cpassword" id="signin-password" type="password" required autocomplete="off" >
+          </div>
+          
+		<ul>	
+		   <li><input class="full-width" type="submit" value="Login"></li>
+		</ul>
+          </form>
+</div>
+        
+      <!-- tab-content -->
+   </div>
+</form> 
+</div>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="{% static 'js/index.js' %}"></script>
+
+
+
+
+
+	
+
+
+		<div id="fh5co-header" class="container">
+				<h1><a href="/index">DEUCE.</a></h1>
+				<nav role="navigation">
+					<ul>
+						<li><a href="/home" >Home</a></li>
+						<li><a href="/sports">Sports Complexes</a></li>
+						<li><a href="/list">Activity</a></li>
+						<li><a href="/about">About</a></li>
+						{% if request.session.user == None  %}
+		<li><button onclick="document.getElementById('id01').style.display='block'">Login</button></li>
+		<li><button onclick="document.getElementById('id02').style.display='block'">Signup</button></li>
+			
+	{% else %}
+		
+  			<li><button onclick="myFunction()" class="dropbtn" type="button" style="background-color: #27E1CE;">Hello,  {{ request.session.user }}
+  		</button></li>
+<ul style="padding:20px">
+<br>
+				
+				<li><a href="/list">Events</a>
+				<li><a href="/createpage">Create Event</a>
+				<li><a href="/booked_events">Booked By You</a>
+				<li><a href="/mylist">Your Events</a>
+				<li><a href="/joined">joined Events</a>
+<li><a href="/logout">Log Out</a>
+</ul>
+		</div>
+			
+	{% endif %}
+
+				</ul>
+				</nav>
+			
+		</div>
+</div>
+
+<div>
+	
+<div style="
+    background-position: center;
+    background-size: cover;
+    background-image:url({% static '/images/michael-jordan.jpeg' %});
+    min-height: 100%;" class="js-fullheight w3-display-container w3-grayscale-min">	
+<div class="overlay-gradient"></div>				   
+<div class="col-md-10 col-md-offset-1 slider-text">
+		   				<div class="slider-text-inner" >
+		   					<h3 style=" color:white; float:right; padding:40px">I have failed <br>over and over and over <br>again in my life. <br> That's why I succeed.<br> - <i> Michael Jordan</i></h3>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		  	
+	  	</div>
+	</div>
+
+	<div class="fh5co-about animate-box">
+		<div class="col-md-6 col-md-offset-3 fh5co-heading">
+			<h2>About The App</h2>
+			<p style="color:black; float:left;">Wanna hone your skills to a pro level? <br>
+Want to see if your strategy is unique or does every other player use it anyway?<br>
+Or just got ditched for a plan of amazing game night?<br>
+Well...we're here to set you up for a session of pure skill, nerve and strategy.<br> <br>
+
+Tighten your laces, put on the game face, and brace yourself for the unknown competition <br>
+Oh and ..you can bring your whole squad too! There's never anything like "too much sports" <br>
+
+Create your own slot with a timing that fits you best or choose to join in another slot that's already booked! <br>
+Select from the variety of sports complexes provided. <br>
+Once your booking is confirmed ..voila!.. be sure to be present and make the most of your well-planned booking. <br>
+
+<br>
+Looking forward to help you with our service <br>
+-team XYZ</p>
+		</div>	
+		<div class="container">
+			<div class="col-md-12 animate-box">
+				<figure>
+					<img src="{% static 'images/indeximg.jpg' %}" alt="Free HTML5 Template" class="img-responsive">
+				</figure>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="fh5co-cta" style="background-image: url(images/slide_1.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="col-md-12 animate-box">
+				<h3>The harder the Battle, the sweeter the Victory.</h3>
+				<p class="btn btn-outline ">Just play. Have fun. Enjoy the game. </p>
+			</div> <br>
+			<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+		</div>
+	</div>
+	</div>
+	
+	
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Flexslider -->
+	<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+	
+	<!-- MAIN JS -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+

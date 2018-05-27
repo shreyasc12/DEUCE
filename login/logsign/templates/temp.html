@@ -1,0 +1,264 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flew &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  <!--
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by FreeHTML5.co
+
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+
+
+	<div id="fh5co-page">
+	<header id="fh5co-header" role="banner">
+		<div class="container">
+			<div class="header-inner">
+				<h1><a href="index.html">Flew</a></h1>
+				<nav role="navigation">
+					<ul>
+						<li><a href="home.html">Home</a></li>
+						<li><a href="sports.html">Sports Complexes</a></li>
+						<li class="active"><a href="activity.html">Activity</a></li>
+						<li><a href="about.html">About</a></li>
+						<li class="cta"><a href="#">Login/ Sign up</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+
+	<aside id="fh5co-hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li style="background-image: url(images/slide_1.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>Our Plans</h2>
+		   					<p class="fh5co-lead">Designed with <i class="icon-heart"></i> by the fine folks at <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</aside>
+
+
+	<div id="fh5co-pricing-section">
+		<div class="container" >
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<br>
+					<h2>ACTIVITY LIST</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="pricing">
+					<div class="col-md-5 animate-box">
+						<div class="price-box">
+
+
+    {%for obj in object_list%}
+
+
+        <!--<a href = '{{obj.pk}}'>{{obj.event_name}}</a>-->
+        <h1><b>{{obj.event_name}}</b> by --<small>{{obj.owner}}</small></h1>
+
+        <h2><b>SPORT: </b>  {{obj.sport}}</h2>
+<p><b>EVENT DATE - </b></p>
+<p><b>IN TIME - </b></p>
+<p><b>OUT TIME - {{obj.out_time}}</b></p>
+<p><b>AVAILABLE PLAYERS - }</b></p>
+<p><b>PLAYERS REQUIRED - </b></p>
+
+							<h2 class=" price">{{obj.event_name}} </h2>
+							<p style="color:#000000;"><b>Created by: </b> {{obj.owner}}</p>
+							<p style="color:#000000;"><b>Event Date:</b> {{obj.date}}</p>
+							<p style="color:#000000;"><b>Location:</b> xyz place </p>
+							<p style="color:#000000;"><b>In time:</b> {{obj.in_time}}</p>
+							<p style="color:#000000;"><b>Out time:</b> {{obj.out_time}}</p>
+							<p style="color:#000000;"><b>Available players</b> {{obj.Available_Players}</p>
+							<p style="color:#000000;"><b>Required players</b> {{obj.Required_Players}}</p>
+							<a href="#" class="btn btn-select-plan btn-sm">Join game</a>
+<!--<input type="button" value="button name" id="demo" onclick="window.open('/e/{{object.pk}}/')" />-->
+<input type="button" value="button name" id="demo" onclick="location.href='/e/{{obj.pk}}/'" />
+
+<script>
+document.getElementById("demo").addEventListener("click", myFunction);
+
+function myFunction() {
+    document.getElementById('demo').disabled = true;
+}
+</script>
+<h2 class="pricing-plan">Event created on: {{obj.published_date}} , Updated {{obj.updated|timesince}} ago</h2>
+
+
+    {%endfor%}
+
+
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-services-section" class="fh5co-light-grey-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<h2>Our Awesome Features</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-laptop"></i>
+						<div class="desc">
+							<h3>Dashboard</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-server"></i>
+						<div class="desc">
+							<h3>Administration</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-money"></i>
+						<div class="desc">
+							<h3>Make Money</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-tablet"></i>
+						<div class="desc">
+							<h3>SEO Monitoring</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-line-chart"></i>
+						<div class="desc">
+							<h3>Online Marketing</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-pie-chart"></i>
+						<div class="desc">
+							<h3>Business Analytics</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<div class="fh5co-cta" style="background-image: url(images/slide_1.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="col-md-12 text-center animate-box">
+				<h3></h3>
+				<p class="btn btn-outline ">Just play. Have fun. Enjoy the game. </p>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Flexslider -->
+	<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+	<!-- Stellar -->
+	<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+
+	<!-- MAIN JS -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

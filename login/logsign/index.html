@@ -1,0 +1,689 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flew &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}" >
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-		awesome.min.css">
+
+	</head>
+	<body>
+	
+
+
+<script type="text/javascript">
+	function login(){
+		var data = document.forms["login"];
+		var email = data["email"].value;
+		var password = data["password"].value;
+		console.log(email);
+		console.log(password);
+		if(email=="" || password==""){
+			alert("Enter all the credentials");
+			return false;
+		}
+	}
+
+	function signup(){
+		var data = document.forms["signup"];
+		var name = data["name"].value;
+		var email = data["email"].value;
+		var password = data["password"].value;
+		var cpassword = data["cpassword"].value;
+		var age= data["age"].value;
+		var interest = data["interest"].value;
+		if(name=="" || email=="" || password=="" || cpassword=="" || age=="" || interest=""){
+			alert("All fields are compulsory");
+			return false;
+		}
+		
+	}
+</script>
+
+
+
+
+<div id="id01" class="modal">
+<form class="modal-content animate" action="/login"  method="post">{% csrf_token %}
+	<div class="form">
+       <div class="imgcontainer">
+      		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt=" " class="avatar">
+    	</div>	
+      <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form class="modal-content animate" action="/login"  method="post">{% csrf_token %}
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" name="email" required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" name="password" required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+			<p>
+			<input class="full-width" type="submit" value="Login">
+          </p>
+          
+		</form>
+
+        </div>
+        
+      <!-- tab-content -->
+     
+</div> <!-- /form -->
+</form> 
+</div>
+
+
+<div id="id02" class="modal">
+<form class="modal-content animate" action="/signup"  method="post">{% csrf_token %}
+	<div class="form">
+       
+      	<div class="imgcontainer">
+      		<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt=" " class="avatar">
+    	</div>	
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+		
+          <form class="modal-content animate" action="/signup" method="post">{% csrf_token %}
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+			<input name="name" id="firstname" type="text" required autocomplete="off" >
+            </div>
+
+			<div class="field-wrap">
+              <label>
+                Age of Player<span class="req">*</span>
+              </label>
+              <input name="age" id="age" type="text" required autocomplete="off" >
+            </div>
+          </div>        
+
+            <div class="field-wrap">
+              <label>
+                Interested Sports<span class="req">*</span>
+              </label>
+              <input name="interest" id="sportsinterest" type="text" required autocomplete="off" >
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input id="signin-email" type="email" required autocomplete="off" " name="email">
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input id="signin-password" type="password" required autocomplete="off"   name="password">
+          </div>
+			<div class="field-wrap">
+            <label>
+              Confirm Password<span class="req">*</span>
+            </label>
+            <input  name="cpassword" id="signin-password" type="password" required autocomplete="off" >
+          </div>
+          
+		<ul>	
+		   <li><input class="full-width" type="submit" value="Login"></li>
+		</ul>
+          </form>
+</div>
+        
+      <!-- tab-content -->
+   </div>
+</form> 
+</div>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="{% static 'js/index.js' %}"></script>
+
+
+
+
+
+	
+
+
+	<div id="fh5co-page">
+	<header id="fh5co-header" role="banner">
+		<div class="container">
+			<div class="header-inner">
+				<h1><a href="/index">Flew</a></h1>
+				<nav role="navigation">
+					<ul>
+						<li><a href="/home">Home</a></li>
+						<li><a href="/sports">Sports Complexes</a></li>
+						<li><a href="/activity">Activity</a></li>
+						<li><a href="/about">About</a></li>
+						{% if request.session.user == None  %}
+		<li><button onclick="document.getElementById('id01').style.display='block'">Login</button></li>
+		<li><button onclick="document.getElementById('id02').style.display='block'">Signup</button></li>
+			
+	{% else %}
+		<!-- <p style="background: red; color: yellow;"> Hello, {{ request.session.user }} </p> -->
+		<li><div class="dropdown" style="float: right; margin-right: 30px; margin-bottom: 10px;">
+  			<li><button onclick="myFunction()" class="dropbtn" type="button">Hello,  {{ request.session.user }}
+  			</button></li>
+			<div id="myDropdown" class= "dropdown-content">
+      			<a href="/logout">Log Out</a>
+				<a href="/list">Events</a>
+				<a href="/createpage">Create Event</a>
+				<a href="/mylist">Your Events</a>
+				<a href="/joined">joined Events</a>
+    		<!--/div>
+				<a href="/logout">Log Out</a>
+				<a href="/list">Events</a>
+				<a href="/createpage">Create Event</a>
+				<a href="/mylist">Your Events</a>
+				<a href="/joined">joined Events</a>
+		</div-->
+			</div>
+			</div>
+		<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+</script>
+			
+	{% endif %}
+			</li>
+
+				</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+</div>
+<div id="fh5co-hero" class="js-fullheight">
+		<div class=" js-fullheight">
+			<ul class="slides">
+		   	<li style="background-image: url({% static 'images/slide_2.jpg' %});">
+		   		<!--div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>Our Expertise</h2>
+		   					<p class="fh5co-lead">Designed with <i class="icon-heart"></i> by the fine folks at <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>
+		   				</div>
+		   			</div>
+		   		</div-->
+		   	</li>
+		  	</ul>
+	  	</div>
+	</div>
+	<!--aside id="fh5co-hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li style="background-image: url(images/slide_1.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>Start Your Startup With This Template</h2>
+		   					<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/slide_2.jpg);">
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>Take Your Business To The Next Level</h2>
+		   					<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/slide_3.jpg);">
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>We Think Different That Others Can't</h2>
+		   					<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</aside-->
+
+	
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+	<div id="fh5co-services-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<h2>Our Awesome Features</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-laptop"></i>
+						<div class="desc">
+							<h3>Dashboard</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-server"></i>
+						<div class="desc">
+							<h3>Administration</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-money"></i>
+						<div class="desc">
+							<h3>Make Money</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-tablet"></i>
+						<div class="desc">
+							<h3>SEO Monitoring</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-line-chart"></i>
+						<div class="desc">
+							<h3>Online Marketing</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="services">
+						<i class="icon-pie-chart"></i>
+						<div class="desc">
+							<h3>Business Analytics</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fh5co-work-section" class="fh5co-light-grey-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<h2>Latest Projects</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 animate-box">
+					<a href="#" class="item-grid text-center">
+						<div class="image" style="background-image: url(images/image_1.jpg)"></div>
+						<div class="v-align">
+							<div class="v-align-middle">
+								<h3 class="title">Geographical App</h3>
+								<h5 class="category">Web Application</h5>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 animate-box">
+					<a href="#" class="item-grid text-center">
+						<div class="image" style="background-image: url(images/image_2.jpg)"></div>
+						<div class="v-align">
+							<div class="v-align-middle">
+								<h3 class="title">Geographical App</h3>
+								<h5 class="category">User Interface</h5>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 animate-box">
+					<a href="#" class="item-grid text-center">
+						<div class="image" style="background-image: url(images/image_3.jpg)"></div>
+						<div class="v-align">
+							<div class="v-align-middle">
+								<h3 class="title">Geographical App</h3>
+								<h5 class="category">Branded</h5>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 animate-box">
+					<a href="#" class="item-grid text-center">
+						<div class="image" style="background-image: url(images/image_4.jpg)"></div>
+						<div class="v-align">
+							<div class="v-align-middle">
+								<h3 class="title">Geographical App</h3>
+								<h5 class="category">Web</h5>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 animate-box">
+					<a href="#" class="item-grid text-center">
+						<div class="image" style="background-image: url(images/image_5.jpg)"></div>
+						<div class="v-align">
+							<div class="v-align-middle">
+								<h3 class="title">Geographical App</h3>
+								<h5 class="category">Illustration</h5>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 animate-box">
+					<a href="#" class="item-grid text-center">
+						<div class="image" style="background-image: url(images/image_6.jpg)"></div>
+						<div class="v-align">
+							<div class="v-align-middle">
+								<h3 class="title">Geographical App</h3>
+								<h5 class="category">Web Application</h5>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-12 text-center animate-box">
+					<p><a href="#" class="btn btn-primary with-arrow">View More Projects <i class="icon-arrow-right"></i></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fh5co-testimony-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<h2>Clients Feedback</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-offset-0 to-animate">
+					<div class="wrap-testimony animate-box">
+						<div class="owl-carousel-fullwidth">
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="images/person1.jpg" alt="user">
+									</figure>
+									<blockquote>
+										<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
+									</blockquote>
+									<span>Athan Smith, via <a href="#" class="twitter">Twitter</a></span>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="images/person2.jpg" alt="user">
+									</figure>
+									<blockquote>
+										<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
+									</blockquote>
+									<span>Nathalie Kosley, via <a href="#" class="twitter">Twitter</a></span>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="images/person3.jpg" alt="user">
+									</figure>
+									<blockquote>
+										<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
+									</blockquote>
+									<span>Yanna Kuzuki, via <a href="#" class="twitter">Twitter</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fh5co-blog-section" class="fh5co-light-grey-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<h2>Recent from Blog</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-6 animate-box">
+					<a href="#" class="item-grid">
+						<div class="image" style="background-image: url(images/image_1.jpg)"></div>
+						<div class="v-align">
+							<div class="v-align-middle">
+								<h3 class="title">We Create Mobile App</h3>
+								<h5 class="date"><span>June 23, 2016</span> | <span>4 Comments</span></h5>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6 col-sm-6 animate-box">
+					<a href="#" class="item-grid">
+						<div class="image" style="background-image: url(images/image_2.jpg)"></div>
+						<div class="v-align">
+							<div class="v-align-middle">
+								<h3 class="title">Geographical App</h3>
+								<h5 class="date"><span>June 22, 2016</span> | <span>10 Comments</span></h5>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-12 text-center animate-box">
+					<p><a href="#" class="btn btn-primary with-arrow">View More Post <i class="icon-arrow-right"></i></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fh5co-pricing-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<h2>Pricing</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="pricing">
+					<div class="col-md-3 animate-box">
+						<div class="price-box">
+							<h2 class="pricing-plan">Starter</h2>
+							<div class="price"><sup class="currency">$</sup>9<small>/month</small></div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
+						</div>
+					</div>
+
+					<div class="col-md-3 animate-box">
+						<div class="price-box">
+							<h2 class="pricing-plan">Basic</h2>
+							<div class="price"><sup class="currency">$</sup>27<small>/month</small></div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
+						</div>
+					</div>
+
+					<div class="col-md-3 animate-box">
+						<div class="price-box popular">
+							<h2 class="pricing-plan pricing-plan-offer">Pro <span>Best Offer</span></h2>
+							<div class="price"><sup class="currency">$</sup>74<small>/month</small></div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
+						</div>
+					</div>
+
+					<div class="col-md-3 animate-box">
+						<div class="price-box">
+							<h2 class="pricing-plan">Unlimited</h2>
+							<div class="price"><sup class="currency">$</sup>140<small>/month</small></div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="fh5co-cta" style="background-image: url(images/slide_1.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="col-md-12 text-center animate-box">
+				<h3></h3>
+				<p class="btn btn-outline ">Just play. Have fun. Enjoy the game. </p>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	<script  src="{% static 'js/index.js' %}"> </script>
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Owl Carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- Flexslider -->
+	<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+
+	<!-- MAIN JS -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+

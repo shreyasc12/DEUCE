@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<title>Home</title>
+<ul>
+    {%for obj in object_list%}
+    <h3>
+    <li>
+
+        <!--<a href = '{{obj.pk}}'>{{obj.event_name}}</a>-->
+        <h1><b>{{obj.event_name}}</b> by --<small>{{obj.username}}</small></h1>
+
+<h2><b>SPORT - {{obj.sport}}</b></h2>
+<p><b>EVENT DATE - {{obj.date}}</b></p>
+<p><b>IN TIME - {{obj.in_time}}</b></p>
+<p><b>OUT TIME - {{obj.out_time}}</b></p>
+<p><b>AVAILABLE PLAYERS - {{obj.Available_Players}}</b></p>
+<p><b>PLAYERS REQUIRED - {{obj.Required_Players}}</b></p>
+
+<!--<input type="button" value="button name" id="demo" onclick="window.open('/e/{{object.pk}}/')" />-->
+<input type="button" value="Join" id="demo" onclick="location.href='/e/{{obj.pk}}/'" />
+<input type="button" value="Book a Court" id="demo" onclick="location.href='/bookform'" />
+
+				
+<script>
+document.getElementById("demo").addEventListener("click", myFunction);
+
+function myFunction() {
+    document.getElementById('demo').disabled = true;
+}
+</script>
+
+<p>Event created on -- {{obj.published_date}} , Updated {{obj.updated|timesince}} ago</p>
+    </li>
+    </h3>
+    {%endfor%}
+</ul>
+{%endblock content%}

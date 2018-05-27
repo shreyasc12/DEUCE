@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}" >
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>     
+
+<body>
+
+<script type="text/javascript">
+	function login(){
+		var data = document.forms["login"];
+		var email = data["email"].value;
+		var password = data["password"].value;
+		console.log(email);
+		console.log(password);
+		if(email=="" || password==""){
+			alert("Enter all the credentials");
+			return false;
+		}
+	}
+
+	function signup(){
+		var data = document.forms["signup"];
+		var name = data["name"].value;
+		var email = data["email"].value;
+		var password = data["password"].value;
+		var cpassword = data["cpassword"].value;
+		var age= data["age"].value;
+		var interest = data["interest"].value;
+		if(name=="" || email=="" || password=="" || cpassword=="" || age=="" || interest=""){
+			alert("All fields are compulsory");
+			return false;
+		}
+		
+	}
+</script>
+
+
+
+
+<div id="id01" class="modal">
+<form class="modal-content animate" action="/login"  method="post">{% csrf_token %}
+	<div class="form">
+       <div class="imgcontainer">
+      		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt=" " class="avatar">
+    	</div>	
+      <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form class="modal-content animate" action="/login"  method="post">{% csrf_token %}
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" name="email" required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" name="password" required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+			<p>
+			<input class="full-width" type="submit" value="Login">
+          </p>
+          
+		</form>
+
+        </div>
+        
+      <!-- tab-content -->
+     
+</div> <!-- /form -->
+</form> 
+</div>
+
+
+<div id="id02" class="modal">
+<form class="modal-content animate" action="/signup"  method="post">{% csrf_token %}
+	<div class="form">
+       
+      	<div class="imgcontainer">
+      		<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt=" " class="avatar">
+    	</div>	
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+		
+          <form class="modal-content animate" action="/signup" method="post">{% csrf_token %}
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+			<input name="name" id="firstname" type="text" required autocomplete="off" >
+            </div>
+
+			<div class="field-wrap">
+              <label>
+                Age of Player<span class="req">*</span>
+              </label>
+              <input name="age" id="age" type="text" required autocomplete="off" >
+            </div>
+          </div>        
+
+            <div class="field-wrap">
+              <label>
+                Interested Sports<span class="req">*</span>
+              </label>
+              <input name="interest" id="sportsinterest" type="text" required autocomplete="off" >
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input id="signin-email" type="email" required autocomplete="off" " name="email">
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input id="signin-password" type="password" required autocomplete="off"   name="password">
+          </div>
+			<div class="field-wrap">
+            <label>
+              Confirm Password<span class="req">*</span>
+            </label>
+            <input  name="cpassword" id="signin-password" type="password" required autocomplete="off" >
+          </div>
+          
+		<ul>	
+		   <li><input class="full-width" type="submit" value="Login"></li>
+		</ul>
+          </form>
+</div>
+        
+      <!-- tab-content -->
+   </div>
+</form> 
+</div>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="{% static 'js/index.js' %}"></script>
+
+
+
+
+
+	
+	<div id="fh5co-page">
+	<header id="fh5co-header" role="banner">
+		<div class="container">
+			<div class="header-inner">
+				<h1><a href="index.html">Flew</a></h1>
+				<nav role="navigation">
+					<ul>
+						<li><a href="{url 'home'}">Home</a></li>
+						<li><a href="{url 'sports'}">Sports Complexes</a></li>
+						<li><a href="{url 'activity'}">Activity</a></li>
+						<li><a href="{url 'about'}">About</a></li>
+					</ul>
+<div>
+	
+	{% if request.session.user == None  %}
+		<button class=cta onclick="document.getElementById('id01').style.display='block'" style="width:auto; float: right; margin-top:10px;">Login</button>		
+		<button onclick="document.getElementById('id02').style.display='block'" style="width:auto; float: right; margin-top:10px;">Signup</button>
+			
+	{% else %}
+		<!-- <p style="background: red; color: yellow;"> Hello, {{ request.session.user }} </p> -->
+		<div class="dropdown" style="float: right; margin-right: 30px; margin-bottom: 10px;">
+  			<button onclick="myFunction()" class="dropbtn" type="button">Hello,  {{ request.session.user }}
+  			<span ></span><i class="fa fa-caret-down"></i></button>
+			<!--div class="dropdown-content">
+      			<a href="#">My Events</a>
+      			<a href="#">Events Near You</a>
+      			<a href="#">Create Event</a>
+				<a href="/logout">Log Out</a>
+    		</div-->
+				<a href="/logout">Log Out</a>
+				<a href="/list">Events</a>
+				<a href="/createevent">Create Event</a>
+				<a href="/mylist">Your Events</a>
+				<a href="/joined">joined Events</a>
+		</div>
+			
+	{% endif %}
+			</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+</div>
+	
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<h2>Custom Select</h2>
+
+<!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+<div class="custom-select" style="width:200px;">
+  <select>
+    <option value="0">Select Sport:</option>
+    <option value="1">Football</option>
+    <option value="2">Swimming</option>
+    <option value="3">Cricket</option>
+    <option value="4">Badminton</option>
+    <option value="5">BasketBall</option>
+  </select>
+<select>
+<option value="0">Select Complex:</option>
+    <option value="1">Football</option>
+</div>
+
+<script>
+var x, i, j, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+for (i = 0; i < x.length; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < selElmnt.length; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var i, s, h;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < s.length; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+</script>
+
+</body>
+</html>
+
