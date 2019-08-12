@@ -1,22 +1,24 @@
 # DEUCE
 Web Application for connecting people having similar interest in sports.
 
-Wanna hone your skills to a pro level?
+Ever been to new place and Struggled with players,With the help of Deuce web Application you will be able to see sports event happening around you,Each event will state the amount of Player Required and currently how many players are Available.Through this web aplication you will never fall short of players and will connect the people with similar interests.
 
-Want to see if your strategy is unique or does every other player use it anyway?
-Or just got ditched for a plan of amazing game night?
-Well...we're here to set you up for a session of pure skill, nerve and strategy.
-Tighten your laces, put on the game face, and brace yourself for the unknown competition
-Oh and ..you can bring your whole squad too! There's never anything like "too much sports" 
-Create your own slot with a timing that fits you best or choose to join in another slot that's already booked!
-Select from the variety of sports complexes provided.
-Once your booking is confirmed ..voila!.. be sure to be present and make the most of your well-planned booking.
+A Web Application For Sports Enthusiasts
 
+* Find people to do sports together
+* Join sports activities near you
+* Track scores, stats and rankings
 
-Technology Used:
-HTML
-CSS
-JAVASCRIPT
-DJANGO
-PYTHON
-MYSQL DATABASE
+# Features
+1. Login/Signup - A Seperate profile for each player and will be able to access his/her portal through Login.
+2. Add an Event - You can add an event of any sport giving details about the venue,Required Players , Available Players
+3. Delete an Event - After Completion of Event Delete the Event
+2. Book a Court 
+
+# Technology Used:
+* ### HTML
+* ### CSS
+* ### JAVASCRIPT
+* ### DJANGO
+* ### PYTHON
+* ### MYSQL DATABASE
